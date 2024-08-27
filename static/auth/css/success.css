@@ -1,0 +1,49 @@
+h1 {
+  margin-bottom: 10px;
+}
+
+img {
+  width: 400px;
+  position: absolute;
+  left: 280px;
+  z-index: -1;
+}
+
+a {
+  text-decoration: none;
+  color:#f2ebe3;
+}
+
+.logout-message {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  margin-inline: auto;
+  align-items: center;
+  width: max-content;
+  padding-top: 50px;
+}
+
+article {
+  margin-top: 100px;
+  position: relative;
+}
+
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0.45em 1em;
+  background-color:#0097b2;
+  font-size: 1rem;
+  margin: 10px;
+}
+
+.button:is(:hover, :focus) {
+  background-color:#3d6781;
+  color: #ff5858;
+}

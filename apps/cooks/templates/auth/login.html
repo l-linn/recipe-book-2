@@ -1,0 +1,25 @@
+{% extends "base.html" %} <!-- Should be first tag-->
+{% load static %}
+
+{% block title %}Log in{% endblock title %}
+
+{% block stylesheet %} 
+{{ block.super}}
+<link rel="stylesheet" type="text/css" href="{% static 'auth/css/login.css' %}" />
+{% endblock stylesheet %}
+
+{% block content %}
+  {% if error_message %}{{error_message}}{% endif %}
+
+  <form action="" method="POST" >
+    <div class="back-arrow">
+      <a href ="{%url 'home'%}">
+        <img src="{% static 'auth/images/arrow-left.svg' %}" alt="back arrow" width="30px" height="30px">
+      </a>
+    </div>
+  {% comment %} add Django security token {% endcomment %}
+  {% csrf_token %}
+  {{form}}
+  <button type="submit" class="button">Log in</button>
+  </form>
+{% endblock content %}

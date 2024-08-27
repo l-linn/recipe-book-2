@@ -1,0 +1,31 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block title %}{{object.name}}{% endblock title %}
+{% block stylesheet %} 
+{{ block.super}}
+<link rel="stylesheet" href="{% static 'recipes/css/recipe_details.css' %}">
+{% endblock stylesheet %}
+
+{% block content %}
+  <nav>
+    <a href="{%url 'recipe_list'%}">Back to All Recipes</a>
+    <a href="{%url 'about'%}">About me</a>
+    <a href="{%url 'search'%}">Search</a>
+    <a href ="{%url 'logout'%}">Log out</a>
+  </nav>
+  <article>
+    <section>
+      <img src="{{object.pic.url}}" width="250" height="250" />
+    </section>
+    
+    <div>
+      <h2>* * {{object.name}} * *</h2>
+      <p><b>Category:</b> {{object.category}}</p>
+      <p><b>Serves:</b> {{object.serves}}</p>
+      <p><b>Cooking Time:</b> {{object.cooking_time}} min</p>
+      <p><b>Difficulty:</b> {{object.difficulty}}</p>
+      <p><b>Ingredient:</b> {{object.display_ingredients}}</p><br>
+      <p><b>Methods:</b> {{object.methods|safe}}</p>
+    </div>
+  </article>
+{% endblock content %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block title %}Search Recipes{% endblock title %}
+{% block stylesheet %} 
+{{ block.super}}
+<link rel="stylesheet" href="{% static 'recipes/css/search_recipes.css' %}">
+{% endblock stylesheet %}
+{% block content %}
+<nav>
+  <a href="{%url 'recipe_list'%}">Back to All Recipes</a>
+  <a href="{%url 'about'%}">About me</a>
+  <a href ="{%url 'logout'%}">Log out</a>
+</nav>
+<div class="search-form">
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{form}}<br>
+    {% if recipes_df %}
+      {{recipes_df|safe}}<br>
+      <img src="data:image/png;base64, {{chart|safe}}">
+    {% else %}
+      <p>* * * Please at least elect one option or there is no matching data in our database! * * *</p>
+    {% endif %}
+    <button type="submit" >Search</button>
+  </form>
+</div>
+{% endblock content %}

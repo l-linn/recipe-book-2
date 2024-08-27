@@ -1,0 +1,132 @@
+{% extends "base.html" %} <!-- Should be first tag-->
+{% load static %}
+
+{% block title %}About me {%endblock title %}
+{% block stylesheet %} 
+{{ block.super}}
+<link rel="stylesheet" href="{% static 'about/css/about.css' %}">
+{% endblock stylesheet %}
+
+
+{% block content %}
+<nav>
+  <a href="{%url 'recipe_list'%}">Back to All Recipes</a>
+  <a href="{%url 'about'%}">About me</a>
+  <a href="{%url 'search'%}">Search</a>
+  <a href ="{%url 'logout'%}">Log out</a>
+</nav>
+<section>
+  <h1>* * * About Me - Other Projects * * *</h1>
+  <div class="work-grid">
+      <div class="work-grid__item">
+          <h3>Project Pokedex</h3>
+          <p>
+              A small web application with HTML, CSS, and
+              JavaScript that loads data from an external API, and
+              enables the viewing of data points in detail.
+          </p>
+          <a
+              class="work-link"
+              href="https://l-linn.github.io/a1-pokedex/"
+              >See the live webpage</a
+          ><br />
+          <a
+              class="work-link"
+              href="https://github.com/l-linn/a1-pokedex.git"
+              >check out the code</a
+          >
+      </div>
+      <div class="work-grid__item">
+          <h3>Meet App</h3>
+          <p>
+              A serverless, progressive web application (PWA)
+              built with React using a test-driven development
+              (TDD) technique. The application uses the Google
+              Calendar API to fetch upcoming events.
+          </p>
+          <a
+              class="work-link"
+              href="https://l-linn.github.io/a4-meet-app/"
+              >See the live webpage</a
+          ><br />
+          <a
+              class="work-link"
+              href="https://github.com/l-linn/a4-meet-app.git"
+              >check out the code</a
+          >
+      </div>
+      <div class="work-grid__item">
+          <h3>My Flix App - Frontend (React Version)</h3>
+          <p>
+              Using React, build the client-side for an app called
+              myFlix based on its existing server-side code (REST
+              API and database).
+          </p>
+          <a
+              class="work-link"
+              href="https://cfmovieapp.netlify.app/"
+              >See the live webpage</a
+          ><br />
+          <a
+              class="work-link"
+              href="https://github.com/l-linn/a3-myFlix-client.git"
+              >check out the code</a
+          >
+      </div>
+      <div class="work-grid__item">
+          <h3>My Flix App - Frontend (Angular Version)</h3>
+          <p>
+              Using Angular, build the client-side for an app
+              called myFlix based on its existing server-side
+              code.
+          </p>
+          <a
+              class="work-link"
+              href="https://l-linn.github.io/a6-myFlix-Angular-client/welcome"
+              >See the live webpage</a
+          ><br />
+          <a
+              class="work-link"
+              href="https://github.com/l-linn/a6-myFlix-Angular-client.git"
+              >check out the code</a
+          >
+      </div>
+      <div class="work-grid__item">
+          <h3>My Flix App - Backend</h3>
+          <p>
+              This API provide users with access to information
+              about different movies, directors, and genres. Users
+              are able to sign up, update their personal
+              information, and create a list of their favorite
+              movies.
+          </p>
+          <a
+              class="work-link"
+              href="https://movies-flix-lin-66267be64a83.herokuapp.com/"
+              >It's deployed via Heroku</a
+          ><br />
+          <a
+              class="work-link"
+              href="https://github.com/l-linn/a2-movie-api.git"
+              >check out the code</a
+          >
+      </div>
+      <div class="work-grid__item">
+          <h3>Chat App - Mobile</h3>
+          <p>
+              This is a React Native chat application that
+              leverages Firebase for real-time messaging. Users
+              can send text messages, images, and share their
+              location. The project integrates popular libraries
+              for various functionalities.
+          </p>
+          <a
+              class="work-link"
+              href="https://github.com/l-linn/a5-chat-app.git"
+              >check out the code</a
+          >
+      </div>
+  </div>
+</section>
+
+{% endblock content %}

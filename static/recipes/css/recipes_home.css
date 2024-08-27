@@ -1,0 +1,71 @@
+body {
+  /* for this project only */
+  display: grid;
+  place-content: center;
+  margin: 0.9rem;
+}
+
+/* utilities */
+
+.flex-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+
+/* button */
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  gap: 0.75rem;
+  justify-content: center;
+  align-items: center;
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0.65em 1.4em;
+  background-color:#0097b2;
+  color:#ffffff;
+  font-size: 0.925rem;
+}
+
+.button:is(:hover, :focus) {
+  background-color:#3d6781;
+  color:#ff5858 ;
+}
+
+.welcome {
+  --content-padding: 1.5rem;
+  --content-spacing: 1rem;
+
+  display: grid;
+  background-color:#ffffff;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  max-width: 600px;
+}
+
+@media (min-width: 600px) {
+  .welcome{
+    --content-padding: 2rem;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.welcome__content {
+  display: grid;
+  gap: var(--content-spacing);
+  padding: var(--content-padding);
+}
+
+.welcome__category {
+  font-size: 0.8125rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.welcome__title {
+  font-size: 2rem;
+}

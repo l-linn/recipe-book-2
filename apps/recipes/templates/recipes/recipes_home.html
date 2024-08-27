@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block title %}Recipe Book{% endblock title %}
+{% block stylesheet %} 
+{{ block.super}}
+<link rel="stylesheet" href="{% static 'recipes/css/recipes_home.css' %}">
+{% endblock stylesheet %}
+{% block content %}
+  <article class="welcome">
+    <picture class="welcome__img">
+      <img src="{% static 'recipes/images/welcome-img.png' %}"
+        alt="home page image">
+    </picture>
+    <div class="welcome__content">
+      <p class="welcome__category">Hello!<br>Welcome to your</p>
+      <h1 class="welcome__title">Recipe Book</h1>
+      <p>Create your own recipe collection or browse the simple and healthy recipes we have prepared for you. </p>
+      <div class="flex-group">
+        <a class="button" href ="{%url 'login' %}">Log in</a>
+        <button class="button" type="button">Register</button>
+      </div>
+    </div>
+  </article>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+{% load static %}
+{% block title %}All Recipes{% endblock title %}
+{% block stylesheet %}{{ block.super}}<link rel="stylesheet" href="{% static 'recipes/css/all_recipes.css' %}">{% endblock stylesheet %}
+
+{% block content %}
+<nav>
+  <a href="#">All Recipes</a>
+  <a href="{%url 'about'%}">About me</a>
+  <a href="{%url 'search'%}">Search</a>
+  <a href ="{%url 'logout'%}">Log out</a>
+</nav>
+
+<header>
+  <h2>* * * All Recipes * * *</h2>
+</header>
+<div class="flex-box">
+  {% for object in object_list %}
+  <div class="flex-item">
+    <a href ="{{object.get_absolute_url}}"> <b>{{object.name}} </b></a>
+    <img src="{{object.pic.url}}" width="180" height="180" />
+  </div>
+  {% endfor %}
+</div>
+{% endblock content %}
+

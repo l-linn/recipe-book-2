@@ -1,0 +1,48 @@
+a {
+  color:#3d6781;
+  text-decoration: none;
+}
+
+a:is(:hover, :focus) {
+  color:#ff5858;
+}
+
+img {
+  border-radius: 20px;
+}
+
+nav {
+  overflow: hidden;
+  background-color: #0097b2;
+}
+
+nav a {
+  float: right;
+  color: #f2ebe3;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+nav a:hover {
+  color: #ff5858;
+  background-color: #3d6781;
+}
+
+h2 {
+  text-align: center;
+  margin-top: 20px;
+  color: #ff5858;
+}
+
+.flex-box {
+  margin: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-self: center;
+}
+
+.flex-item {
+  padding: 10px;
+}
